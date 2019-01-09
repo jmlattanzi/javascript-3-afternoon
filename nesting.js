@@ -51,7 +51,19 @@ var employees = [
 */
 
 //Code Here
+const employeeUpdater = () => {
+  let updated = employees.slice()
+  for(let i = 0; i < updated.length; i++) {
+    if(updated[i].firstName === 'Theo') {
+      updated.splice(i, 1)
+    }
 
+    if(updated[i].firstName === 'Lorie') {
+      updated[i].department = 'HR'
+    }
+  }
+  return updated
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -69,7 +81,15 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
-
+const removeDuplicates = () => {
+  let dupes = []
+  for(let i = 0; i < workplaceAccidents.length; i++) {
+    if(!dupes.includes(workplaceAccidents[i])) {
+      dupes.push(workplaceAccidents[i])
+    }
+  }
+  return dupes
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -97,10 +117,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
-
-
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 ////////// PROBLEM 4 //////////
 
@@ -139,7 +157,11 @@ var myCar = {
 */
 
 //Code Here
-
+const recordCleaner = () => {
+  for(let prop in myCar.accidents) {
+    myCar.accidents[prop].atFaultForAccident = false;
+  }
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -158,5 +180,17 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
-
+const looper = () => {
+  let arr = numsArr.slice()
+  for(let i = 0; i < arr.length; i++) {
+    for(let x = 0; x < arr.length + 2; x++) {
+      if(arr[i][x] % 2 === 0) {
+        arr[i][x] = 'even'
+      } else if(arr[i][x] % 2 !== 0){
+        arr[i][x] = 'odd'
+      }
+    }
+  }
+  return arr
+}
 
