@@ -102,7 +102,7 @@ const double = obj => {
 const secrets = obj => {
   let str = ''
   for(let key in obj) {
-    if(key.includes('sh')) {
+    if(key.startsWith('sh')) {
       str += obj[key]
     }
   }
@@ -183,7 +183,7 @@ for(let key in deleteTheBigNumbers) {
 //Code Here
 const startsWithK = obj => {
   for(let key in obj) {
-    if(key.indexOf('k') === 0) {
+    if(key.startsWith('k')) {
       delete obj[key]
     }
   }
